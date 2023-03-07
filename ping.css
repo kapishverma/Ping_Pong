@@ -98,6 +98,6 @@ body {
     width: 100%;
     height: 25px;
     bottom: 0;
-    background-image: url(media/kanta.png);
     background-size: contain;
+    background-image: url(media/kanta.png);
 }
