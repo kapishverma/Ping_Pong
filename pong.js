@@ -11,7 +11,7 @@ var v_y = document.getElementById("vy");
 
 var currentScore = 0;
 var velocity_x = 4;
-var velocity_y = -2;
+var velocity_y = -4;
 
 red.style.left = "440px";
 yellow.style.left = "440px";
@@ -39,15 +39,16 @@ function gameEngine() {
         velocity_y *= (-1);  // velocity reverse
         velocity_x =  Math.sign(velocity_x)*Math.round(4 + (6 - 4) * Math.random()) ;
         v_x.innerHTML = `Velocity-X : ${velocity_x}`
-        v_y.innerHTML = `Velocity-Y : ${velocity_y}`
+        // v_y.innerHTML = `Velocity-Y : ${velocity_y}`
     }
       else if(ball_y >= 500){
 
-        if (ball_x < ( parseFloat(yellow.style.left) - 12) || ball_x > (parseFloat(yellow.style.left)  + 172)) {
+        if (ball_x < ( parseFloat(yellow.style.left) - 13) || ball_x > (parseFloat(yellow.style.left)  + 173)) {
 
             gameOverSound.play();
             currentScore = 0;
             displayScore.innerHTML = `Score : ${currentScore}`;
+
             alert("Game over!!! Press OK to play the game  && Arraw_left and right Keys For Movement");
             
             red.style.left = "440px";
@@ -56,21 +57,21 @@ function gameEngine() {
             ball_y = 500;
             
             velocity_x = 3;
-            velocity_y = -2;
+            velocity_y = -4;
             currentScore = 0;
             displayScore.innerHTML = `Score : ${currentScore}`;
             v_x.innerHTML = `Velocity-X : ${velocity_x}`
-            v_y.innerHTML = `Velocity-Y : ${velocity_y}`
+            // v_y.innerHTML = `Velocity-Y : ${velocity_y}`
 
         } else {
             //  speed badhega
             currentScore++;
-            velocity_y = (velocity_y + 0.5)*(-1);  // velocity reverse
+            velocity_y = (velocity_y)*(-1);  // velocity reverse
             velocity_x =  Math.sign(velocity_x)*Math.round(4 + (6 - 4) * Math.random()) ;
 
             displayScore.innerHTML = `Score : ${currentScore}`;
             v_x.innerHTML = `Velocity-X : ${velocity_x}`
-            v_y.innerHTML = `Velocity-Y : ${velocity_y}`
+            // v_y.innerHTML = `Velocity-Y : ${velocity_y}`
         }
     }
 
@@ -118,7 +119,7 @@ function leftMove() {
     if (horizontal <= 10) {
         return;
     } else {
-        yellow.style.left  = (parseFloat(yellow.style.left ) - 40) + "px";
+        yellow.style.left  = (parseFloat(yellow.style.left ) - 20) + "px";
     }
 };
 
@@ -127,6 +128,6 @@ function rightMove() {
     if (horizontal >= 840) {
         return;
     } else {
-        yellow.style.left  = (parseFloat(yellow.style.left ) + 40) + "px";
+        yellow.style.left  = (parseFloat(yellow.style.left ) + 20) + "px";
     }
 };
