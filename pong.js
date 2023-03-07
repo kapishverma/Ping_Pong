@@ -56,7 +56,7 @@ function gameEngine() {
             ball_x = 488;
             ball_y = 500;
             
-            velocity_x = 3;
+            // velocity_x = 3;
             velocity_y = -4;
             currentScore = 0;
             displayScore.innerHTML = `Score : ${currentScore}`;
